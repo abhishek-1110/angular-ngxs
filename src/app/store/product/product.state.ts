@@ -1,5 +1,5 @@
 import { State, Action, StateContext } from '@ngxs/store';
-import { AddProduct, AddBulkProducts } from './product.action';
+import { AddProduct, AddBulkProducts, SetProductsFromDb } from './product.action';
 
 export interface Product {
   name: string;
@@ -35,4 +35,12 @@ export class ProductState {
       products: [...state.products, ...action.products],
     });
   }
+
+
+
+@Action(SetProductsFromDb)
+setFromDb(ctx: StateContext<ProductStateModel>, action: SetProductsFromDb) {
+  ctx.setState({ products: [...action.products] });
+}
+
 }

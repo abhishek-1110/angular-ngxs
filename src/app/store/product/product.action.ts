@@ -10,3 +10,8 @@ export class AddProduct {
   }
 
   
+
+  export class SetProductsFromDb {
+    static readonly type = '[Product] Set From DB';
+    constructor(public products: { name: string; price: number }[]) {}
+  }
