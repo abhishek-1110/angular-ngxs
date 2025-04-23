@@ -17,10 +17,10 @@ export interface UserStateModel {
 export class UserState {
   @Action(SetUser)
   setUser(ctx: StateContext<UserStateModel>, action: SetUser) {
-    debugger;
     ctx.setState({
       name: action.name,
       email: action.email
     });
+    
   }
 }
